@@ -6,8 +6,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.use('/user', (req, res) =>{
-  res.send("user API Requested");
+app.get('/user/:userId/:name', (req, res) =>{
+  console.log(req.params);
+  res.send({firstName: "yogesh", lastName: "Sangeviya"});
 })
 
 app.use('/about', (req, res) => {
